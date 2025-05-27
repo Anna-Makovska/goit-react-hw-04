@@ -1,0 +1,22 @@
+.button {
+    margin: 0 auto;
+    margin-top: 50px;
+    display: block;
+    width: 120px;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: blue;
+    color: white;
+    margin-bottom: 40px;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+    animation: gradientAnimation 15s ease infinite;
+    color: black;
+    transition: transform 0.3s ease;
+
+}
+.button:hover {
+    color: white;
+    transform: scale(1.2);
+}

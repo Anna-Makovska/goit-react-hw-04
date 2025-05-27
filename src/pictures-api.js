@@ -13,6 +13,7 @@ const clientId = "Rp0tlHApxfzeVwSH2s8HjmER9WQdT8XnqE5Fc_NPBHw"
              query: topic,
              page: Currentpage,
              per_page: 12,
+             
     
          }
      });
@@ -20,6 +21,6 @@ const clientId = "Rp0tlHApxfzeVwSH2s8HjmER9WQdT8XnqE5Fc_NPBHw"
 
      return {
        photos: response.data.results,
-       total: response.data.total,
+       totalPages: response.data.total,
      };
 }

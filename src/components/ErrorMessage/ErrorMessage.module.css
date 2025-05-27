@@ -1,0 +1,10 @@
+.wrapper {
+    display: inline-flex;
+    border: 1px solid red;
+    margin: 0 auto;
+    margin-left: 36%;
+}
+.alert {
+    color: red;
+    padding: 10px;
+}

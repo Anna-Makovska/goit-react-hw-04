@@ -1,5 +1,15 @@
 .header {
   background-color: blue;
   margin: 0 auto;
-  max-width: 1200px;
+  padding: 20px;
+  background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fad0c4, #fbc2eb, #a18cd1);
+  animation: gradientAnimation 15s ease infinite;
+}
+.main {
+  margin: 0 auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
+
 }
