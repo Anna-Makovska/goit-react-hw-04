@@ -1,9 +1,9 @@
-import s from "./Loadmore.module.css"
-const Loadmore = ({ onClick }) => {
+import s from "./LoadmoreBtn.module.css"
+const LoadmoreBtn = ({ onClick }) => {
     return (
         <>
             <button className={s.button} type="submit" onClick={onClick}>Load more</button>
         </>
     )
 }
-export default Loadmore;
+export default LoadmoreBtn;

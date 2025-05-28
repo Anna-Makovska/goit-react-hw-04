@@ -5,13 +5,13 @@ import { useEffect } from 'react';
 import { fetchImages } from './pictures-api';
 import ImageGallery from './components/ImageGallery/ImageGallery';
 import Loader from './components/Loader/Loader';
-import Loadmore from './components/Loadmore/Loadmore';
+import LoadmoreBtn from './components/LoadmoreBtn/LoadmoreBtn';
 import ErrorMessage from './components/ErrorMessage/ErrorMessage';
 import Modal from "react-modal";
 import ImageModal from './components/ImageModal/ImageModal';
+import { Toaster } from 'react-hot-toast';
 
 
-Modal.setAppElement("#root");
 
 function App() {
 
@@ -83,22 +83,13 @@ function App() {
 
   return (
     <>
-      <Modal
-        isOpen={modalIsOpen}
-        onRequestClose={handleModalClose}
-        style={{
-          content: {
-            top: "50%",
-            left: "50%",
-            right: "auto",
-            bottom: "auto",
-            marginRight: "-50%",
-            transform: "translate(-50%, -50%)",
-          },
-        }}
-      >
-        {selectedPhoto && <ImageModal photo={selectedPhoto} />}
-      </Modal>
+        {selectedPhoto && (
+          <ImageModal
+            isOpen={modalIsOpen}
+            onRequestClose={handleModalClose}
+            photo={selectedPhoto}
+          />
+        )}
 
       <header className="header">
         <SearchBar onSearch={handleSearch} />
@@ -108,9 +99,10 @@ function App() {
         {hasPhotos && (
           <ImageGallery items={photos} onPhotoClick={handleSelectedPhoto} />
         )}
-        {hasPhotos && !isLastPage && <Loadmore onClick={incrementPage} />}
+        {hasPhotos && !isLastPage && <LoadmoreBtn onClick={incrementPage} />}
         {isLoading && <Loader />}
       </main>
+      <Toaster reverseOrder={false} />
     </>
   );
 }

@@ -1,12 +1,24 @@
 import s from "./SearchBar.module.css";
-
+import toast from "react-hot-toast";
 
  const SearchBar = ({onSearch}) => 
  {
      
     const handleSubmit = (e) => {
         e.preventDefault();
-        onSearch(e.target.elements.searchQuery.value);
+        const query = e.target.elements.searchQuery.value.trim();
+        if (query === "") {
+            toast.error("You should write something to make this button work", {
+                icon: "🧐",
+                style: {
+                    marginTop: "70px",
+                    marginRight: "100px",
+                    fontSize: "17,5px",
+                  },
+            })
+            return
+        }
+        onSearch(query);
         e.target.reset();
         
      };
